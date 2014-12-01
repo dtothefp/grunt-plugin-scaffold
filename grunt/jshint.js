@@ -8,6 +8,6 @@ module.exports = {
     'tasks/**/*.js'
   ],
   test: [
-    'test/**/*.js'
+    'test/*-spec.js'
   ]
 };
