@@ -1,0 +1,1 @@
+{"srcFiles":["example.txt"],"options":{"message":"files object target"}}

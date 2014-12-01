@@ -2,7 +2,8 @@ module.exports = {
   dev: {
     options: {
       variables: {
-        examples: 'text/fixtures/**'
+        src: 'test/fixtures',
+        dest: 'test/expected'
       }
     }
   }

@@ -1,1 +1,1 @@
-'example 3'
+example3.js

@@ -1,0 +1,1 @@
+{"srcFiles":["example.txt","example2.js","example3.js"],"options":{"message":"glob target"}}

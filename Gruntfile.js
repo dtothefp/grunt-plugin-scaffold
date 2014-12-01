@@ -23,10 +23,8 @@ module.exports = function(grunt) {
     init: true
   });
 
-  grunt.registerTask('default', ['jshint:dev', 'your-task']);
+  grunt.registerTask('dev', ['config:dev', 'jshint:dev', 'your-task']);
 
-  grunt.registerTask('dev', ['jshint:dev', 'watch:dev']);
-
-  grunt.registerTask('test', ['jshint:test', 'mochaTest']);
+  grunt.registerTask('test', ['config:dev', 'jshint:test', 'mochaTest']);
 
 };

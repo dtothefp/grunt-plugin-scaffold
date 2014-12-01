@@ -1,11 +1,14 @@
 var spawn = require('child_process').spawn;
 
-module.exports = function (task, config, done){
+module.exports = function (opts){
+  var task = 'test';
+  if(opts.target) task += ':' + opts.target;
+
   var cp = spawn(
     'grunt',
 
     [ task,
-      '--config', JSON.stringify(config),
+      '--config', JSON.stringify(opts.config),
       '--tasks', 'tasks',
       '--gruntfile', 'test/Gruntfile.js',
       '--base', process.cwd()
@@ -18,6 +21,6 @@ module.exports = function (task, config, done){
   );
 
   cp.on('exit', function(code) {
-    done();
+    opts.done();
   });
 };

@@ -18,10 +18,9 @@
 
     "node" : true,
     "browser" : true,
-
     "boss" : false,
     "curly": false,
-    "debug": false,
+    "debug": true,
     "devel": false,
     "eqeqeq": true,
     "evil": true,
