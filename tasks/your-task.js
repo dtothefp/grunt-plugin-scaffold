@@ -31,9 +31,10 @@ module.exports = function(grunt) {
 
     this.files.forEach(function(file){
       /* do stuff with your file mappings */
-
       // seems like this file.src is some sort of immutable 'Getter' structure
-      file.src.filter(function(f) {
+      // this is a weird problem for Stack O, filter works on the getter but not when run through the child process
+      var fileSrc = file.src.length > 0 ? file.src : file.orig.src;
+      fileSrc.filter(function(f) {
         var exampleText = options.message + ' ' + fs.readFileSync(path.join(process.cwd(), '/', f), {encoding: 'utf8'});
         fs.writeFileSync(file.dest, exampleText);
       });

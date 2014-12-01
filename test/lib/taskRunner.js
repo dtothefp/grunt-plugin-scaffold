@@ -6,9 +6,9 @@ module.exports = function (task, config, done){
 
     [ task,
       '--config', JSON.stringify(config),
-      '--tasks', '../tasks',
-      '--gruntfile',
-      'test/Gruntfile.js'
+      '--tasks', 'tasks',
+      '--gruntfile', 'test/Gruntfile.js',
+      '--base', process.cwd()
     ],
 
     {

@@ -18,9 +18,8 @@ describe('testing your grunt task', function() {
 
   describe('setup some options for your grunt task and run it in a child process', function() {
 
-    var config;
     beforeEach(function(done){
-      config = {
+      var config = {
         'your-task': {
           sut: {
             options: {
@@ -37,8 +36,8 @@ describe('testing your grunt task', function() {
     });
 
     it('checks stuff returned from your task', function(done){
-        var destFileExists = fs.existsSync('test/fixtures/dest.js');
-        expect(destFileExists).to.be.true;
+        var destText = fs.readFileSync('test/fixtures/dest.js', {encoding: 'utf8'}).replace(/^\s+|\s+$/g,'');
+        expect(destText).to.equal('I\'ve found a message from the test file');
         done();
     });
 
